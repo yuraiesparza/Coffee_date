@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☕ Tienes una invitación 💕</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="phone-frame">
+        <div class="notch"></div>
+        
+        <div class="screen" id="screen1">
+            <div class="envelope-container">
+                <div class="envelope" id="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="heart-emoji">💌</div>
+                    </div>
+                </div>
+                <p class="hint">✨ Toca para abrir ✨</p>
+            </div>
+        </div>
+
+        <div class="screen hidden" id="screen2">
+            <div class="invitation-content">
+                <div class="greeting">🌸 ¡Hola, guapo! 🌸</div>
+                
+                <div class="subtitle">¿Qué tal si hacemos algo divertido? 😉</div>
+                
+                <div class="activities">
+                    <div class="activity">
+                        <span class="icon">☕</span>
+                        <span>Café</span>
+                    </div>
+                    <div class="plus">+</div>
+                    <div class="activity">
+                        <span class="icon">🃏</span>
+                        <span>UNO</span>
+                    </div>
+                    <div class="equals">=</div>
+                    <div class="activity">
+                        <span class="icon">💕</span>
+                        <span>Nuestra cita</span>
+                    </div>
+                </div>
+
+                <div class="uno-cards">
+                    <div class="card red">7</div>
+                    <div class="card blue">+2</div>
+                    <div class="card yellow">4</div>
+                    <div class="card green">+4</div>
+                </div>
+
+                <div class="question-box">
+                    <h2>¿Vienes? 🤭</h2>
+                    <p>Prometo ser buena guía turística... de mi corazón 😏💕</p>
+                </div>
+
+                <div class="buttons-row">
+                    <button class="btn yes-btn" id="yesBtn">¡Sí, vamos! 💕</button>
+                    <button class="btn no-btn" id="noBtn">
+                        No puedo 😭
+                        <span class="tooltip">¡Mentira! No hay opción 😜</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="screen hidden" id="screen3">
+            <div class="success-content">
+                <div class="celebration">🎉💕🥳</div>
+                <div class="success-title">¡ES UNA CITA!</div>
+                <div class="success-text">
+                    Sabía que dirías que sí 🥰<br>
+                    Va a ser inolvidable, te lo prometo 💫
+                </div>
+                
+                <div class="funny-note">
+                    <p>📍 Ya estoy buscando la cafetería perfecta</p>
+                    <p>🃏 Las cartas de UNO están ready</p>
+                    <p>😏 Y mis mejores miradas también</p>
+                </div>
+
+                <div class="final-emoji">☕🃏💕</div>
+                
+                <p class="goodbye">¡Nos vemos pronto, handsome! 😘</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
