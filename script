@@ -1,0 +1,91 @@
+// Elementos del DOM
+const envelope = document.getElementById('envelope');
+const screen1 = document.getElementById('screen1');
+const screen2 = document.getElementById('screen2');
+const screen3 = document.getElementById('screen3');
+const yesBtn = document.getElementById('yesBtn');
+const noBtn = document.getElementById('noBtn');
+
+// Variable para contar cuántas veces ha intentado decir "no"
+let noAttempts = 0;
+
+// Abrir el sobre
+function openEnvelope() {
+    envelope.classList.add('open');
+    
+    setTimeout(() => {
+        screen1.classList.add('hidden');
+        screen2.classList.remove('hidden');
+    }, 800);
+}
+
+// Si dice que NO
+noBtn.addEventListener('mouseenter', () => {
+    noAttempts++;
+    
+    if (noAttempts >= 2) {
+        // Cambiar el mensaje del tooltip
+        const tooltip = noBtn.querySelector('.tooltip');
+        tooltip.textContent = '💕 Ya dijiste que s í el otro día';
+    }
+});
+
+// Si dice que SÍ
+yesBtn.addEventListener('click', () => {
+    screen2.classList.add('hidden');
+    screen3.classList.remove('hidden');
+    
+    // Crear confetti
+    createConfetti();
+});
+
+// Función para crear confeti
+function createConfetti() {
+    const colors = ['#ff6b9d', '#c44569', '#f8b500', '#ff85a2', '#00ff00', '#4488ff'];
+    
+    for (let i = 0; i < 50; i++) {
+        setTimeout(() => {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti-piece';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+            
+            document.body.appendChild(confetti);
+            
+            // Eliminar después de la animación
+            setTimeout(() => {
+                confetti.remove();
+            }, 3000);
+        }, i * 50);
+    }
+}
+
+// Agregar estilos para el confeti
+const style = document.createElement('style');
+style.textContent = `
+    .confetti-piece {
+        position: fixed;
+        top: -10px;
+        width: 10px;
+        height: 10px;
+        border-radius: 2px;
+        animation: confettiFall 3s ease-in forwards;
+        z-index: 1000;
+    }
+    
+    @keyframes confettiFall {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(100vh) rotate(720deg);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Permitir abrir el sobre haciendo click en cualquier parte
+envelope.addEventListener('click', openEnvelope);
